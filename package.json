@@ -1,0 +1,63 @@
+{
+  "name": "image-utils-js",
+  "version": "0.0.1",
+  "description": "Utilities for image",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:debug": "node --inspect-brk node_modules/.bin/jest",
+    "start": "tsc --watch & live-server",
+    "build": "rm -rf lib && tsc && cp ./package.json ./lib/package.json",
+    "pack": "npm run build && cd lib && npm pack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matteobarone/image-utils-js.git"
+  },
+  "keywords": [
+    "image",
+    "utilities",
+    "js",
+    "util",
+    "img",
+    "images"
+  ],
+  "author": "Matteo Barone",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matteobarone/image-utils-js/issues"
+  },
+  "homepage": "https://github.com/matteobarone/image-utils-js#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "@types/node": "^12.6.2",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+  },
+  "jest": {
+    "roots": [
+      "src"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/**.ts",
+      "!**/**.d.ts",
+      "!**/**.spec.ts",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ],
+    "coverageDirectory": "coverage",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json",
+      "node"
+    ]
+  }
+}
