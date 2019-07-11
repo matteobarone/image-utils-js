@@ -11,7 +11,6 @@ export function getImageBrightness(imageSrc: string): Promise<number> {
     let colorSum = 0;
 
     img.onload = () => {
-      debugger;
       const canvas = document.createElement('canvas') as HTMLCanvasElement;
       canvas.width = img.width;
       canvas.height = img.height;
@@ -32,13 +31,10 @@ export function getImageBrightness(imageSrc: string): Promise<number> {
       const imgArea = (img.width * img.height) || 1;
       const brightness = Math.floor(colorSum / imgArea);
 
-      debugger;
-
       resolve(brightness);
     };
 
     img.onerror = (e) => {
-      debugger;
       reject(e);
     }
   });
