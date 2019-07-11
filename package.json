@@ -1,14 +1,15 @@
 {
   "name": "image-utils-js",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "Utilities for image",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "test:debug": "node --inspect-brk node_modules/.bin/jest",
-    "start": "tsc --watch & live-server",
-    "build": "rm -rf lib && tsc && cp ./package.json ./lib/package.json",
-    "pack": "npm run build && cd lib && npm pack"
+    "start": "tsc --watch",
+    "build": "rm -rf lib && tsc && cp ./package.json ./lib/package.json && cp ./README.md ./lib/README.md",
+    "pack": "npm run build && npm pack",
+    "release": "npm run build && cd lib && npm publish"
   },
   "repository": {
     "type": "git",
